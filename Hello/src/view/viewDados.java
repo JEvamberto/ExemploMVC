@@ -5,11 +5,13 @@
  */
 package view;
 
+import model.Observer;
+
 /**
  *
  * @author jose
  */
-public class viewDados extends javax.swing.JFrame {
+public class viewDados extends javax.swing.JFrame implements Observer {
 
     /**
      * Creates new form viewDados
@@ -186,4 +188,9 @@ public class viewDados extends javax.swing.JFrame {
     private javax.swing.JTextField txt_addTempo;
     private javax.swing.JTextField txt_addUf;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -5,10 +5,17 @@
  */
 package control;
 
+import model.Observer;
+
 /**
  *
  * @author jose
  */
-public class viewControllerDados {
+public class viewControllerDados implements Observer {
+
+    @Override
+    public void update() {
+        
+    }
     
 }

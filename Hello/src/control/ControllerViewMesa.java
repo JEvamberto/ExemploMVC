@@ -5,10 +5,17 @@
  */
 package control;
 
+import model.Observer;
+
 /**
  *
  * @author jose
  */
-public class ControllerViewMesa {
+public class ControllerViewMesa implements Observer {
+
+    @Override
+    public void update() {
+      
+    }
     
 }

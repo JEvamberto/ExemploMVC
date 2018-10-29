@@ -5,11 +5,13 @@
  */
 package view;
 
+import model.Observer;
+
 /**
  *
  * @author jose
  */
-public class viewMesa extends javax.swing.JFrame {
+public class viewMesa extends javax.swing.JFrame implements Observer {
 
     /**
      * Creates new form viewMesa
@@ -162,4 +164,9 @@ public class viewMesa extends javax.swing.JFrame {
     private javax.swing.JLabel txt_RTempo;
     private javax.swing.JLabel txt_RUf;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
