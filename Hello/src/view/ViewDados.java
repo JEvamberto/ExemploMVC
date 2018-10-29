@@ -8,6 +8,8 @@ package view;
 import control.ControllerViewDados;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 import model.Clima;
 import model.Observer;
 
@@ -28,6 +30,7 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
         
         this.model=model;
         this.controller= new ControllerViewDados(this.model, this);
+        this.model.attach(this);
         
     }
 
@@ -43,10 +46,8 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
         btn_addTempo = new javax.swing.JButton();
         btn_addTemperatura = new javax.swing.JButton();
         btn_addUf = new javax.swing.JButton();
-        btn_addGrausCelsius = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txt_Temperatura = new javax.swing.JTextField();
-        txt_addGrauCelsius = new javax.swing.JTextField();
         txt_addTempo = new javax.swing.JTextField();
         txt_addUf = new javax.swing.JTextField();
         btn_addCidade = new javax.swing.JButton();
@@ -80,8 +81,6 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
             }
         });
 
-        btn_addGrausCelsius.setText("Add  Graus celsius");
-
         jLabel1.setText("FUNCEME");
 
         txt_addTempo.addActionListener(new java.awt.event.ActionListener() {
@@ -103,22 +102,20 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txt_addUf, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                             .addComponent(txt_addTempo, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txt_addGrauCelsius, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txt_Temperatura, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txt_addCidade))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(62, 62, 62)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btn_addGrausCelsius)
-                                    .addComponent(btn_addTemperatura)))
+                                .addComponent(btn_addTemperatura))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(61, 61, 61)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btn_addCidade)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(btn_addUf)
-                                        .addComponent(btn_addTempo))))))
+                                        .addComponent(btn_addTempo)))))
+                        .addGap(9, 9, 9))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(189, 189, 189)
                         .addComponent(jLabel1)))
@@ -133,18 +130,14 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_addTemperatura)
                     .addComponent(txt_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_addGrauCelsius, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_addGrausCelsius))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
+                        .addGap(73, 73, 73)
                         .addComponent(txt_addTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                         .addComponent(txt_addCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(55, 55, 55)
                         .addComponent(btn_addTempo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_addCidade)))
@@ -226,14 +219,12 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_addCidade;
-    private javax.swing.JButton btn_addGrausCelsius;
     private javax.swing.JButton btn_addTemperatura;
     private javax.swing.JButton btn_addTempo;
     private javax.swing.JButton btn_addUf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txt_Temperatura;
     private javax.swing.JTextField txt_addCidade;
-    private javax.swing.JTextField txt_addGrauCelsius;
     private javax.swing.JTextField txt_addTempo;
     private javax.swing.JTextField txt_addUf;
     // End of variables declaration//GEN-END:variables
@@ -251,4 +242,41 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
     public void actionPerformed(ActionEvent e) {
        this.controller.trataBotao(e);
     }
+
+    public JTextField getTxt_Temperatura() {
+        return txt_Temperatura;
+    }
+
+    public void setTxt_Temperatura(JTextField txt_Temperatura) {
+        this.txt_Temperatura = txt_Temperatura;
+    }
+
+    public JTextField getTxt_addCidade() {
+        return txt_addCidade;
+    }
+
+    public void setTxt_addCidade(JTextField txt_addCidade) {
+        this.txt_addCidade = txt_addCidade;
+    }
+
+    
+
+    public JTextField getTxt_addTempo() {
+        return txt_addTempo;
+    }
+
+    public void setTxt_addTempo(JTextField txt_addTempo) {
+        this.txt_addTempo = txt_addTempo;
+    }
+
+    public JTextField getTxt_addUf() {
+        return txt_addUf;
+    }
+
+    public void setTxt_addUf(JTextField txt_addUf) {
+        this.txt_addUf = txt_addUf;
+    }
+
+   
+    
 }

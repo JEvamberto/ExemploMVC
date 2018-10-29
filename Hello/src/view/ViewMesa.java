@@ -27,6 +27,7 @@ public class ViewMesa extends javax.swing.JFrame implements Observer {
         initComponents();
         this.model=model;
         this.controller= new ControllerViewMesa(model, this);
+        this.model.attach(this);
     }
 
     /**

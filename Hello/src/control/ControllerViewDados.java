@@ -23,14 +23,32 @@ public class ControllerViewDados implements Observer {
       
        this.Model=model;
        this.view=view;
+       this.Model.attach(this);
        
     }
     
     
      public void trataBotao(ActionEvent e) {
          
-         if (e.getActionCommand()==) {
+         if ("Add temperatura".equals(e.getActionCommand())) {
+             this.Model.setTemperatura(Float.parseFloat(this.view.getTxt_Temperatura().getText())); 
+         }
+         
+         
+         if ("Add Tempo".equals(e.getActionCommand())) {
              
+             this.Model.setTempo(this.view.getTxt_addTempo().getText());
+                     
+             
+         }
+         if ("Add cidade".equals(e.getActionCommand())) {
+             
+             this.Model.setCidade(this.view.getTxt_addCidade().getText());
+             
+         }
+         
+         if ("Add UF".equals(e.getActionCommand())) {
+             this.Model.setUf(this.view.getTxt_addUf().getText());
          }
        
     }

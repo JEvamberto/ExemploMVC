@@ -14,9 +14,12 @@ import view.ViewMesa;
  * @author jose
  */
 public class ControllerViewMesa implements Observer {
-
-    public ControllerViewMesa(Clima model, ViewMesa aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private ViewMesa view;
+    private Clima model;
+    public ControllerViewMesa(Clima model, ViewMesa view) {
+        this.model=model;
+        this.view=view;
+        model.attach(this);
     }
 
     @Override

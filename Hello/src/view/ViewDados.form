@@ -34,17 +34,13 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txt_addUf" pref="147" max="32767" attributes="0"/>
                           <Component id="txt_addTempo" alignment="1" max="32767" attributes="0"/>
-                          <Component id="txt_addGrauCelsius" alignment="1" max="32767" attributes="0"/>
                           <Component id="txt_Temperatura" alignment="1" max="32767" attributes="0"/>
                           <Component id="txt_addCidade" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btn_addGrausCelsius" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btn_addTemperatura" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="btn_addTemperatura" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
@@ -57,6 +53,7 @@
                               </Group>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
@@ -77,20 +74,15 @@
                   <Component id="btn_addTemperatura" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txt_Temperatura" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txt_addGrauCelsius" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn_addGrausCelsius" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                       <Component id="txt_addTempo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="26" max="32767" attributes="0"/>
+                      <EmptySpace pref="32" max="32767" attributes="0"/>
                       <Component id="txt_addCidade" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="btn_addTempo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btn_addCidade" min="-2" max="-2" attributes="0"/>
@@ -128,19 +120,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_addUfActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_addGrausCelsius">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Add  Graus celsius"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="FUNCEME"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_Temperatura">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txt_addGrauCelsius">
     </Component>
     <Component class="javax.swing.JTextField" name="txt_addTempo">
       <Events>
