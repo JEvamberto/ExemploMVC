@@ -15,6 +15,7 @@ public class Clima {
     private String cidade;
     private String tempo;
     private float temperatura;
+    
 
     public String getUf() {
         return uf;

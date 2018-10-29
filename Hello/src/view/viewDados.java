@@ -27,21 +27,116 @@ public class viewDados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btn_addTempo = new javax.swing.JButton();
+        btn_addTemperatura = new javax.swing.JButton();
+        btn_addUf = new javax.swing.JButton();
+        btn_addGrausCelsius = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txt_Temperatura = new javax.swing.JTextField();
+        txt_addGrauCelsius = new javax.swing.JTextField();
+        txt_addTempo = new javax.swing.JTextField();
+        txt_addUf = new javax.swing.JTextField();
+        btn_addCidade = new javax.swing.JButton();
+        txt_addCidade = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btn_addTempo.setText("Add Tempo");
+
+        btn_addTemperatura.setText("Add temperatura");
+
+        btn_addUf.setText("Add UF");
+        btn_addUf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addUfActionPerformed(evt);
+            }
+        });
+
+        btn_addGrausCelsius.setText("Add  Graus celsius");
+
+        jLabel1.setText("FUNCEME");
+
+        txt_addTempo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_addTempoActionPerformed(evt);
+            }
+        });
+
+        btn_addCidade.setText("Add cidade");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_addUf, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                            .addComponent(txt_addTempo, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txt_addGrauCelsius, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txt_Temperatura, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txt_addCidade))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(62, 62, 62)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_addGrausCelsius)
+                                    .addComponent(btn_addTemperatura)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btn_addCidade)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btn_addUf)
+                                        .addComponent(btn_addTempo))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(jLabel1)))
+                .addGap(0, 28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_addTemperatura)
+                    .addComponent(txt_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_addGrauCelsius, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_addGrausCelsius))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(txt_addTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(txt_addCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_addTempo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_addCidade)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_addUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_addUf))
+                .addGap(36, 36, 36))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_addUfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addUfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_addUfActionPerformed
+
+    private void txt_addTempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_addTempoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_addTempoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +174,16 @@ public class viewDados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_addCidade;
+    private javax.swing.JButton btn_addGrausCelsius;
+    private javax.swing.JButton btn_addTemperatura;
+    private javax.swing.JButton btn_addTempo;
+    private javax.swing.JButton btn_addUf;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField txt_Temperatura;
+    private javax.swing.JTextField txt_addCidade;
+    private javax.swing.JTextField txt_addGrauCelsius;
+    private javax.swing.JTextField txt_addTempo;
+    private javax.swing.JTextField txt_addUf;
     // End of variables declaration//GEN-END:variables
 }
