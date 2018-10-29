@@ -5,19 +5,28 @@
  */
 package view;
 
+import control.ControllerViewMesa;
+import model.Clima;
 import model.Observer;
 
 /**
  *
  * @author jose
  */
-public class viewMesa extends javax.swing.JFrame implements Observer {
+public class ViewMesa extends javax.swing.JFrame implements Observer {
 
     /**
-     * Creates new form viewMesa
+     * Creates new form ViewMesa
+     * 
      */
-    public viewMesa() {
+    
+    private Clima model;
+    private ControllerViewMesa controller;
+    
+    public ViewMesa(Clima model) {
         initComponents();
+        this.model=model;
+        this.controller= new ControllerViewMesa(model, this);
     }
 
     /**
@@ -121,6 +130,7 @@ public class viewMesa extends javax.swing.JFrame implements Observer {
     /**
      * @param args the command line arguments
      */
+    //OLHA AQUI
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -135,22 +145,29 @@ public class viewMesa extends javax.swing.JFrame implements Observer {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewMesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewMesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewMesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewMesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new viewMesa().setVisible(true);
             }
-        });
+        //</editor-fold>
+
+        /* Create and display the form */
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ViewMesa().setVisible(true);
+            }
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -167,6 +184,11 @@ public class viewMesa extends javax.swing.JFrame implements Observer {
 
     @Override
     public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        this.txt_RCidade.setText(model.getCidade());
+        this.txt_RTemperatura.setText(Float.toString(model.getTemperatura()));
+        this.txt_RTempo.setText(model.getTempo());
+        this.txt_RUf.setText(model.getUf());
+        
     }
 }

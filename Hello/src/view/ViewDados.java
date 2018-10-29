@@ -5,19 +5,30 @@
  */
 package view;
 
+import control.ControllerViewDados;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import model.Clima;
 import model.Observer;
 
 /**
  *
  * @author jose
  */
-public class viewDados extends javax.swing.JFrame implements Observer {
+public class ViewDados extends javax.swing.JFrame implements Observer, ActionListener {
 
     /**
-     * Creates new form viewDados
+     * Creates new form ViewDados
      */
-    public viewDados() {
+    
+    private Clima model;
+    private ControllerViewDados controller;
+    public ViewDados(Clima model) {
         initComponents();
+        
+        this.model=model;
+        this.controller= new ControllerViewDados(this.model, this);
+        
     }
 
     /**
@@ -42,10 +53,25 @@ public class viewDados extends javax.swing.JFrame implements Observer {
         txt_addCidade = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
+        addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                formPropertyChange(evt);
+            }
+        });
 
         btn_addTempo.setText("Add Tempo");
 
         btn_addTemperatura.setText("Add temperatura");
+        btn_addTemperatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addTemperaturaActionPerformed(evt);
+            }
+        });
 
         btn_addUf.setText("Add UF");
         btn_addUf.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +166,20 @@ public class viewDados extends javax.swing.JFrame implements Observer {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_addTempoActionPerformed
 
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_formMouseClicked
+
+    private void formPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_formPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formPropertyChange
+
+    private void btn_addTemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addTemperaturaActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_btn_addTemperaturaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -157,22 +197,31 @@ public class viewDados extends javax.swing.JFrame implements Observer {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        //OLHA AQUI
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new viewDados().setVisible(true);
             }
-        });
+        //</editor-fold>
+
+        /* Create and display the form */
+        //OLHA AQUI
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ViewDados().setVisible(true);
+            }
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -188,9 +237,18 @@ public class viewDados extends javax.swing.JFrame implements Observer {
     private javax.swing.JTextField txt_addTempo;
     private javax.swing.JTextField txt_addUf;
     // End of variables declaration//GEN-END:variables
-
+    
+    
+    
+    
     @Override
     public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+       this.controller.trataBotao(e);
     }
 }

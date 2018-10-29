@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jose
@@ -16,6 +18,21 @@ public class Clima {
     private String tempo;
     private float temperatura;
     
+    private ArrayList<Observer>  observers = new ArrayList<>();
+    
+    public void attach(Observer observer){
+        this.observers.add(observer);
+    }
+    
+    public void dettach(Observer observer){
+        this.observers.remove(observer);
+    }
+    
+    public void notifyToAll(){
+        for (Observer observer : this.observers) {
+            observer.update();
+        }
+    }
 
     public String getUf() {
         return uf;
