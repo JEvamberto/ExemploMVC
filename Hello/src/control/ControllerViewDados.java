@@ -29,7 +29,7 @@ public class ControllerViewDados implements Observer {
     
     
      public void trataBotao(ActionEvent e) {
-         
+         System.out.println("HELLLo");
          if ("Add temperatura".equals(e.getActionCommand())) {
              this.Model.setTemperatura(Float.parseFloat(this.view.getTxt_Temperatura().getText())); 
          }

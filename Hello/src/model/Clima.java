@@ -40,6 +40,7 @@ public class Clima {
 
     public void setUf(String uf) {
         this.uf = uf;
+        this.notifyToAll();
     }
 
     public String getCidade() {
@@ -48,6 +49,7 @@ public class Clima {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+        this.notifyToAll();
     }
 
     public String getTempo() {
@@ -56,6 +58,7 @@ public class Clima {
 
     public void setTempo(String tempo) {
         this.tempo = tempo;
+        this.notifyToAll();
     }
 
     public float getTemperatura() {
@@ -64,6 +67,7 @@ public class Clima {
 
     public void setTemperatura(float temperatura) {
         this.temperatura = temperatura;
+        this.notifyToAll();
     }
     
     
