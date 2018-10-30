@@ -66,6 +66,11 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
         });
 
         btn_addTempo.setText("Add Tempo");
+        btn_addTempo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addTempoActionPerformed(evt);
+            }
+        });
 
         btn_addTemperatura.setText("Add temperatura");
         btn_addTemperatura.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +95,11 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
         });
 
         btn_addCidade.setText("Add cidade");
+        btn_addCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addCidadeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,50 +108,42 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_addUf, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                            .addComponent(txt_addTempo, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txt_Temperatura, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txt_addCidade))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(62, 62, 62)
-                                .addComponent(btn_addTemperatura))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btn_addCidade)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btn_addUf)
-                                        .addComponent(btn_addTempo)))))
-                        .addGap(9, 9, 9))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(189, 189, 189)
-                        .addComponent(jLabel1)))
-                .addGap(0, 28, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txt_addCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txt_addUf, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                                .addComponent(txt_addTempo, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txt_Temperatura, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_addCidade)
+                            .addComponent(btn_addTempo)
+                            .addComponent(btn_addTemperatura)
+                            .addComponent(btn_addUf))))
+                .addGap(0, 140, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_addTemperatura)
-                    .addComponent(txt_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(txt_addTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addComponent(txt_addCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(btn_addTempo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_addCidade)))
-                .addGap(18, 18, 18)
+                    .addComponent(btn_addCidade)
+                    .addComponent(txt_addCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_addTemperatura))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_addTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_addTempo))
+                .addGap(18, 61, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_addUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_addUf))
@@ -153,6 +155,8 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
 
     private void btn_addUfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addUfActionPerformed
         // TODO add your handling code here:
+        controller.trataBotao(evt);
+
     }//GEN-LAST:event_btn_addUfActionPerformed
 
     private void txt_addTempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_addTempoActionPerformed
@@ -170,8 +174,21 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
 
     private void btn_addTemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addTemperaturaActionPerformed
         // TODO add your handling code here:
+        controller.trataBotao(evt);
        
     }//GEN-LAST:event_btn_addTemperaturaActionPerformed
+
+    private void btn_addTempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addTempoActionPerformed
+        // TODO add your handling code here:
+                controller.trataBotao(evt);
+
+    }//GEN-LAST:event_btn_addTempoActionPerformed
+
+    private void btn_addCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addCidadeActionPerformed
+        // TODO add your handling code here:
+                controller.trataBotao(evt);
+
+    }//GEN-LAST:event_btn_addCidadeActionPerformed
 
     /**
      * @param args the command line arguments
