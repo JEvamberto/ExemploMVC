@@ -27,7 +27,7 @@ public class ViewMesaDois extends javax.swing.JFrame implements Observer {
         this.controller = new ControllerViewMesaDois(this.model, this);
         this.model.attach(this);
         this.Sol.setVisible(false);
-        this.Indeterminado.setVisible(false);
+      //  this.Indeterminado.setVisible(false);
         this.Nublado.setVisible(false);
     }
 
