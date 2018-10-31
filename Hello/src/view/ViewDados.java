@@ -52,6 +52,10 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
         txt_addUf = new javax.swing.JTextField();
         btn_addCidade = new javax.swing.JButton();
         txt_addCidade = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,91 +68,73 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
                 formPropertyChange(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_addTempo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btn_addTempo.setText("Add Tempo");
         btn_addTempo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addTempoActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_addTempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 160, -1));
 
+        btn_addTemperatura.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btn_addTemperatura.setText("Add temperatura");
         btn_addTemperatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addTemperaturaActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_addTemperatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 160, -1));
 
+        btn_addUf.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btn_addUf.setText("Add UF");
         btn_addUf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addUfActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_addUf, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 160, -1));
 
-        jLabel1.setText("FUNCEME");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel1.setText("Dados Meteorológicos");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+        getContentPane().add(txt_Temperatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 147, 30));
 
         txt_addTempo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_addTempoActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_addTempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 147, 30));
+        getContentPane().add(txt_addUf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 147, 30));
 
+        btn_addCidade.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btn_addCidade.setText("Add cidade");
         btn_addCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addCidadeActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_addCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 160, -1));
+        getContentPane().add(txt_addCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 147, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txt_addCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txt_addUf, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                                .addComponent(txt_addTempo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txt_Temperatura, javax.swing.GroupLayout.Alignment.TRAILING)))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_addCidade)
-                            .addComponent(btn_addTempo)
-                            .addComponent(btn_addTemperatura)
-                            .addComponent(btn_addUf))))
-                .addGap(0, 140, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_addCidade)
-                    .addComponent(txt_addCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_addTemperatura))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_addTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_addTempo))
-                .addGap(18, 61, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_addUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_addUf))
-                .addGap(36, 36, 36))
-        );
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setText("Cidade:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setText("UF:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel4.setText("Tempo:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel5.setText("Temperatura:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -203,6 +189,10 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
     private javax.swing.JButton btn_addTempo;
     private javax.swing.JButton btn_addUf;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField txt_Temperatura;
     private javax.swing.JTextField txt_addCidade;
     private javax.swing.JTextField txt_addTempo;
