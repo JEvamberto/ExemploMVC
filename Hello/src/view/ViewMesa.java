@@ -6,7 +6,7 @@
 package view;
 
 import control.ControllerViewMesa;
-import model.Clima;
+import model.Servidor;
 import model.Observer;
 
 /**
@@ -20,10 +20,10 @@ public class ViewMesa extends javax.swing.JFrame implements Observer {
      * 
      */
     
-    private Clima model;
+    private Servidor model;
     private ControllerViewMesa controller;
     
-    public ViewMesa(Clima model) {
+    public ViewMesa(Servidor model) {
         initComponents();
         this.model=model;
         this.controller= new ControllerViewMesa(model, this);

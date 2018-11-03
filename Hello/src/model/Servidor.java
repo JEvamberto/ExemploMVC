@@ -11,14 +11,16 @@ import java.util.ArrayList;
  *
  * @author jose
  */
-public class Clima {
+public class Servidor {
     
-    private String uf;
-    private String cidade;
-    private String tempo;
-    private float temperatura;
+    private Uf uf;
+    private Cidade cidade;
+    private Tempo tempo;
+    private Temperatura temperatura;
     
     private ArrayList<Observer>  observers = new ArrayList<>();
+    
+    
     
     public void attach(Observer observer){
         this.observers.add(observer);
@@ -28,6 +30,15 @@ public class Clima {
         this.observers.remove(observer);
     }
     
+    public Servidor(){
+        this.uf=new Uf();
+        this.cidade= new Cidade();
+        this.tempo=new Tempo();
+        this.temperatura=new Temperatura();
+       
+    
+    }
+    
     public void notifyToAll(){
         for (Observer observer : this.observers) {
             observer.update();
@@ -35,38 +46,43 @@ public class Clima {
     }
 
     public String getUf() {
-        return uf;
+        return uf.getUf();
     }
 
     public void setUf(String uf) {
-        this.uf = uf;
+        
+        this.uf.setUf(uf);
+        
         this.notifyToAll();
     }
 
     public String getCidade() {
-        return cidade;
+        return cidade.getNome();
     }
 
     public void setCidade(String cidade) {
-        this.cidade = cidade;
+        
+        this.cidade.setNome(cidade);
         this.notifyToAll();
+        
     }
 
     public String getTempo() {
-        return tempo;
+        return tempo.getTempo();
     }
 
     public void setTempo(String tempo) {
-        this.tempo = tempo;
+        this.tempo.setTempo(tempo);
         this.notifyToAll();
     }
 
     public float getTemperatura() {
-        return temperatura;
+        return temperatura.getTemperatura();
     }
 
     public void setTemperatura(float temperatura) {
-        this.temperatura = temperatura;
+        this.temperatura.setTemperatura(temperatura);
+        
         this.notifyToAll();
     }
     

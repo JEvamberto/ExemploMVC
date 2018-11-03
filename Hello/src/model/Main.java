@@ -16,7 +16,7 @@ import view.ViewMesaDois;
 public class Main {
     public static void main(String[] args) {
         
-        Clima modelo= new Clima();
+        Servidor modelo= new Servidor();
         
           try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

@@ -6,7 +6,7 @@
 package control;
 
 import java.awt.event.ActionEvent;
-import model.Clima;
+import model.Servidor;
 import model.Observer;
 import view.ViewDados;
 
@@ -16,10 +16,10 @@ import view.ViewDados;
  */
 public class ControllerViewDados implements Observer {
     
-    private Clima Model;
+    private Servidor Model;
     private ViewDados view;
     
-    public ControllerViewDados(Clima model, ViewDados view) {
+    public ControllerViewDados(Servidor model, ViewDados view) {
       
        this.Model=model;
        this.view=view;

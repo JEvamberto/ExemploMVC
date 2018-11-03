@@ -6,7 +6,7 @@
 package view;
 
 import control.ControllerViewMesaDois;
-import model.Clima;
+import model.Servidor;
 import model.Observer;
 
 /**
@@ -18,16 +18,17 @@ public class ViewMesaDois extends javax.swing.JFrame implements Observer {
     /**
      * Creates new form ViewMesaDois
      */
-    private Clima model;
+    private Servidor model;
     private ControllerViewMesaDois controller;
 
-    public ViewMesaDois(Clima model) {
+    public ViewMesaDois(Servidor model) {
         initComponents();
         this.model = model;
         this.controller = new ControllerViewMesaDois(this.model, this);
         this.model.attach(this);
         this.Sol.setVisible(false);
-      //  this.Indeterminado.setVisible(false);
+        //  this.Indeterminado.setVisible(false);
+        this.chuva.setVisible(false);
         this.Nublado.setVisible(false);
     }
 
@@ -48,6 +49,7 @@ public class ViewMesaDois extends javax.swing.JFrame implements Observer {
         jLabel6 = new javax.swing.JLabel();
         Temperatura = new javax.swing.JLabel();
         Indeterminado = new javax.swing.JLabel();
+        chuva = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,13 +87,15 @@ public class ViewMesaDois extends javax.swing.JFrame implements Observer {
         Indeterminado.setText("Indeterminado");
         getContentPane().add(Indeterminado, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, -1, -1));
 
+        chuva.setIcon(new javax.swing.ImageIcon("/home/jose/NetBeansProjects/ExemploMVC/Hello/3.png")); // NOI18N
+        getContentPane().add(chuva, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cidade;
@@ -99,6 +103,7 @@ public class ViewMesaDois extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel Nublado;
     private javax.swing.JLabel Sol;
     private javax.swing.JLabel Temperatura;
+    private javax.swing.JLabel chuva;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
@@ -111,9 +116,17 @@ public class ViewMesaDois extends javax.swing.JFrame implements Observer {
         if ("Nublado".equals(model.getTempo())) {
             this.Sol.setVisible(false);
             this.Indeterminado.setVisible(false);
+            this.chuva.setVisible(false);
             this.Nublado.setVisible(true);
         } else if ("Sol".equals(model.getTempo())) {
             this.Sol.setVisible(true);
+            
+            this.chuva.setVisible(false);
+            this.Indeterminado.setVisible(false);
+            this.Nublado.setVisible(false);
+        } else if ("Chuvoso".equals(model.getTempo())) {
+            this.Sol.setVisible(false);
+            this.chuva.setVisible(true);
             this.Indeterminado.setVisible(false);
             this.Nublado.setVisible(false);
         } else {

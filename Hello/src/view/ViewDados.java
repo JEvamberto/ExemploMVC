@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import model.Clima;
+import model.Servidor;
 import model.Observer;
 
 /**
@@ -23,9 +23,9 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
      * Creates new form ViewDados
      */
     
-    private Clima model;
+    private Servidor model;
     private ControllerViewDados controller;
-    public ViewDados(Clima model) {
+    public ViewDados(Servidor model) {
         initComponents();
         
         this.model=model;
@@ -235,6 +235,7 @@ public class ViewDados extends javax.swing.JFrame implements Observer, ActionLis
 
     public JTextField getTxt_addTempo() {
         return txt_addTempo;
+        
     }
 
     public void setTxt_addTempo(JTextField txt_addTempo) {

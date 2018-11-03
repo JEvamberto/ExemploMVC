@@ -5,7 +5,7 @@
  */
 package control;
 
-import model.Clima;
+import model.Servidor;
 import model.Observer;
 import view.ViewMesaDois;
 
@@ -15,10 +15,10 @@ import view.ViewMesaDois;
  */
 public class ControllerViewMesaDois implements Observer {
     
-    private Clima model;
+    private Servidor model;
     private ViewMesaDois view;
     
-    public ControllerViewMesaDois (Clima model, ViewMesaDois view){
+    public ControllerViewMesaDois (Servidor model, ViewMesaDois view){
         this.model=model;
         this.view=view;
         this.model.attach(this);
